@@ -1,0 +1,21 @@
+<img src="../assets/imgs/banner.jpg" height="250px" width="100%">
+
+<div class="playlists">
+  <div class="row">
+    <div class="column">
+      <div class="border">
+        <h1>Add Songs</h1>
+        <input class="input" type="text" placeholder="Song Title" [(ngModel)]="title"> <br>
+        <input class="input" type="text" placeholder="Song Duration(minutes)" [(ngModel)]="duration"><br>
+        <p>Genre</p>
+        <label class="checkbox-inline"><input type="checkbox" value="Slow" [(ngModel)]="gen.slow">Slow</label>
+        <label class="checkbox-inline"><input type="checkbox" value="Romance" [(ngModel)]="gen.romance">Romance</label>
+        <label class="checkbox-inline"><input type="checkbox" value="Remixed" [(ngModel)]="gen.remixed">Remixed</label> <br>
+        <button class="btn" (click)="addSong()"> Save</button>
+      </div>
+    </div>
+    <div class="column">
+     <app-playhistory [gettitle]="title" [getduration]="duration" [getgen]=gen></app-playhistory>
+    </div>
+  </div>
+</div>
